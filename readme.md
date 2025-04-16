@@ -7,6 +7,14 @@ This tool helps optimize overlapping gene sequences, inspired by a project in "H
 ## Problem
 When two genes overlap in DNA, changing one sequence can break the other. This tool updates codons to keep a base sequence the same and minimize errors with the new sequence. 
 
+## Example Usage
+
+For the htgaa final project I was looking to bind the lysis protein to another protein (as opposed to Dnaj): https://spotless-bongo-449.notion.site/Group-Project-1af905f53b4b8071864cc252b8b00a7e?pvs=4
+This meant updating the N terminus of the lysis protein. I used pepMLM https://colab.research.google.com/drive/1u0i-LBog_lvQ5YRKs7QLKh_RtI-tV8qM?usp=sharing#scrollTo=VtfbXYndhyle to generate binders which can be found in test.csv. I then ran all the binders through the protein optimizer and selected the peptide with the lease amount of errors.
+
+# Supported Features
+- similar switches (allows you to swap a positive amino acid for another positive amino acid)
+
 ## Usage
 
 Run the program interactively:
