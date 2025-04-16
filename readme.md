@@ -13,7 +13,7 @@ For the htgaa final project I was looking to bind the lysis protein to another p
 This meant updating the N terminus of the lysis protein. I used pepMLM https://colab.research.google.com/drive/1u0i-LBog_lvQ5YRKs7QLKh_RtI-tV8qM?usp=sharing#scrollTo=VtfbXYndhyle to generate binders which can be found in test.csv. I then ran all the binders through the protein optimizer and selected the peptide with the lease amount of errors.
 
 # Supported Features
-- similar switches (allows you to swap a positive amino acid for another positive amino acid)
+- similar switches: If it cannot find another way to code the amino acid to keep the sequences the same in protein space, as a fallback, the algorithm will try other amino acids of the same "type" for instance if in the new sequence you have an Alanine and even with GAT, GCC, GCA, GCG it cannot find a way to align with the original sequence, it will try all the other hydrophobic amino acids
 
 ## Usage
 
