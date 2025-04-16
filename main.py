@@ -103,14 +103,18 @@ def optimize_protein_sequence(dna_sequence, gene_a_start, gene_a_end, gene_b_sta
     reduced_a_start, reduced_b_start = get_overlapping_indices(gene_a_start, gene_b_start)
     gene_a = dna_sequence[reduced_a_start:gene_a_end]
     gene_b = new_gene_b[reduced_b_start - gene_b_start:]
-    return optimize_recursive(
+    offset = reduced_b_start - reduced_a_start
+    result, errors, similar_switch, index = optimize_recursive(
         gene_a,
         gene_b,
         None,
         None,
-        reduced_b_start - reduced_a_start,
+        offset,
         similar_enabled
     )
+    if offset > 0:
+        return result[offset:], errors, similar_switch, index
+    return result, errors, similar_switch, index
 
 if __name__ == "__main__":
     print("Enter DNA sequence optimization parameters:")
